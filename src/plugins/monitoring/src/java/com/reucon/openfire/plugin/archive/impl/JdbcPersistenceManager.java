@@ -32,7 +32,7 @@ import com.reucon.openfire.plugin.archive.xep0059.XmppResultSet;
 public class JdbcPersistenceManager implements PersistenceManager {
 	public static final int DEFAULT_MAX = 1000;
 
-	public static final String SELECT_MESSAGES_BY_CONVERSATION = "SELECT DISTINCT " + "ofConversation.conversationID, " + "ofConversation.room, "
+	public static final String SELECT_MESSAGES_BY_CONVERSATION = "SELECT " + "ofConversation.conversationID, " + "ofConversation.room, "
 			+ "ofConversation.isExternal, " + "ofConversation.startDate, " + "ofConversation.lastActivity, " + "ofConversation.messageCount, "
 			+ "ofConParticipant.joinedDate, " + "ofConParticipant.leftDate, " + "ofConParticipant.bareJID, " + "ofConParticipant.jidResource, "
 			+ "ofConParticipant.nickname, " + "ofMessageArchive.fromJID, " + "ofMessageArchive.toJID, " + "ofMessageArchive.sentDate, "
@@ -103,7 +103,7 @@ public class JdbcPersistenceManager implements PersistenceManager {
 
 	public static final String MESSAGE_FROM_JID = "ofMessageArchive.fromJID";
 
-	public static final String SELECT_ACTIVE_CONVERSATIONS = "SELECT DISTINCT " + "ofConversation.conversationID, " + "ofConversation.room, "
+	public static final String SELECT_ACTIVE_CONVERSATIONS = "SELECT " + "ofConversation.conversationID, " + "ofConversation.room, "
 			+ "ofConversation.isExternal, " + "ofConversation.startDate, " + "ofConversation.lastActivity, " + "ofConversation.messageCount, "
 			+ "ofConParticipant.joinedDate, " + "ofConParticipant.leftDate, " + "ofConParticipant.bareJID, " + "ofConParticipant.jidResource, "
 			+ "ofConParticipant.nickname, " + "ofMessageArchive.fromJID, " + "ofMessageArchive.toJID, " + "ofMessageArchive.sentDate, "
@@ -125,7 +125,7 @@ public class JdbcPersistenceManager implements PersistenceManager {
 
 	// public static final String SELECT_PARTICIPANTS_BY_CONVERSATION =
 	// "SELECT participantId,startTime,endTime,jid FROM archiveParticipants WHERE conversationId =? ORDER BY startTime";
-	 public static final String SELECT_MESSAGES = "SELECT DISTINCT " + "ofMessageArchive.fromJID, "
+	 public static final String SELECT_MESSAGES = "SELECT " + "ofMessageArchive.fromJID, "
 			+ "ofMessageArchive.toJID, " + "ofMessageArchive.sentDate, " + "ofMessageArchive.stanza, "
 			+ "ofMessageArchive.messageID, " + "ofConParticipant.bareJID "
 			+ "FROM ofMessageArchive "
